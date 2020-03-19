@@ -1,0 +1,17 @@
+.containerStyle {
+	margin-top: 200px;
+	width: 100%;
+
+	.MuiTypography-root {
+		font-family: "American Typewriter", serif;
+		font-weight: 500;
+	}
+
+	.sectionTitle {
+		margin-bottom: 30px;
+		font-weight: 600;
+	}
+	.colorCode-red {
+		color: #c52c2b;
+	}
+}

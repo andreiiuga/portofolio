@@ -1,0 +1,25 @@
+.aboutWrapper {
+	margin-top: 300px;
+
+	.portraitStyle {
+		padding: 0px 0px 0px 50px;
+		width: 100%;
+		height: auto;
+	}
+	.lsitItem {
+		display: flex;
+		align-items: center;
+
+		.listMarker {
+			margin: 5px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	a {
+		color: #c52c2b;
+		font-weight: 600;
+		text-decoration: none;
+	}
+}
