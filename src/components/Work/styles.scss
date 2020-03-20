@@ -1,0 +1,54 @@
+.projectDetails {
+	margin-bottom: 70px;
+
+	.galeryWrapper {
+		width: 100%;
+		position: relative;
+		box-shadow: 3px 3px 5px 1px grey;
+		border-radius: 4px;
+		margin-top: 50px;
+
+		&.evenItem {
+			transform: rotate(-5deg);
+			margin-right: 10px;
+
+		}
+
+		&.not-evenItem {
+			transform: rotate(5deg);
+			margin-left: 10px;
+
+			.fileClip {
+				right: 0px;
+			}
+		}
+
+		.carouselItem {
+			height: 100%;
+			background: #fafafa;
+			padding: 10px;
+		}
+		.fileClip {
+			position: absolute;
+			width: 200px;
+			height: auto;
+			top: -46px;
+			z-index: 1;
+		}
+	}
+
+	.detailsWrapper {
+
+		&.evenItem {
+			padding-left: 15px;
+		}
+
+		&.not-evenItem {
+			padding-right: 15px;
+		}
+
+		.MuiTypography-caption {
+			color: red;
+		}
+	}
+}

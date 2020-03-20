@@ -1,17 +1,36 @@
 .containerStyle {
-	margin-top: 200px;
-	width: 100%;
+    margin-top: 200px;
+    width: 100%;
 
-	.MuiTypography-root {
-		font-family: "American Typewriter", serif;
-		font-weight: 500;
-	}
+    .MuiTypography-root {
+        font-family: "American Typewriter", serif;
+        font-weight: 500;
+    }
 
-	.sectionTitle {
-		margin-bottom: 30px;
-		font-weight: 600;
-	}
-	.colorCode-red {
-		color: #c52c2b;
-	}
+    .sectionWrapper {
+        margin-top: 300px;
+
+        .sectionTitle {
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+    }
+
+    .colorCode-red {
+        color: #c52c2b;
+    }
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-image: url("assets/img/underline.png");
+    background-position: 0 105%;
+    background-size: 100% 30%;
+    color: black;
+
+    &:hover {
+        color: #c52c2b;
+    };
 }

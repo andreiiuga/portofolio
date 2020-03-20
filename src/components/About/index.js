@@ -22,9 +22,9 @@ const COL2SKILLS = [
 ]
 
 
-function Intro() {
+function About() {
   return (
-    <section className="aboutWrapper">
+    <section className="aboutWrapper sectionWrapper">
       <Typography className="sectionTitle" variant="h5"> <span className="colorCode-red">01.</span> About me  .  .  .</Typography>
       <Grid container>
         <Grid item xs={12} sm={12} md={7}>
@@ -77,4 +77,4 @@ function Intro() {
   );
 }
 
-export default Intro;
+export default About;

@@ -1,23 +1,21 @@
 .introWrapper {
 
-	.primaryLine {
-		margin: 0px 0px 50px 0px;
-	}
+    .primaryLine {
+        margin: 0px 0px 50px 0px;
+    }
 
-	.picturesContainer {
-		margin-left: -20px;
-		display: flex;
-		width: 100%;
+    .picturesContainer {
+        margin-left: -20px;
+        width: 100%;
 
-		.nameClasses {
-			flex: 1;
-			width: 50%;
-			height: auto;
-			padding: 1em;
-		}
-	}
-	.shortDescription {
-		width: 60%;
-		margin: 0px 0px 50px 0px;
-	}
+        .nameClasses {
+            width: 50%;
+            height: auto;
+            padding: 1em;
+        }
+    }
+    .shortDescription {
+        width: 60%;
+        margin: 0px 0px 50px 0px;
+    }
 }

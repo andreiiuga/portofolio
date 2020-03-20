@@ -1,0 +1,24 @@
+.tabsPannelWrapper {
+	display: flex;
+	min-height: 400px;
+
+	.tabsWrapper {
+		min-width: 180px;
+	}
+	.panelWrapper {
+		margin: 0px 20px;
+
+		.listMarker {
+			margin: 5px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.MuiTab-wrapper {
+		align-items: flex-start !important;
+		font-family: "American Typewriter", serif;
+		text-transform: none;
+		font-size: 1.2em;
+	}
+}

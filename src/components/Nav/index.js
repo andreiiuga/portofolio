@@ -93,7 +93,7 @@ function Nav() {
               <Link component="button" color="textSecondary" variant="h6">
                 Contact
               </Link>
-              <Button variant="outlined" href="#outlined-buttons">
+              <Button href="#outlined-buttons">
                 Resume
               </Button>
             </Typography>

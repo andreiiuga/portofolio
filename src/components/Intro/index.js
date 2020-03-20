@@ -22,7 +22,7 @@ function Intro() {
         {"I'm a software engineer based in Bucharest, Romania specializing in building and occasionally designing exceptional,\
         high-quality websites and applications."}
       </Typography>
-      <Button href="mailto:andreiiuga2@gmail.com" variant="outlined">Get In Touch</Button>
+      <Button href="mailto:andreiiuga2@gmail.com">Get In Touch</Button>
     </section>
   );
 }
