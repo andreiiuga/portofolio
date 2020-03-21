@@ -13,6 +13,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 // import Link from '@material-ui/core/Link';
 import {
   Link,
+  useHistory
 } from "react-router-dom";
 
 import icon from 'assets/img/logo.png';
@@ -45,6 +46,8 @@ function AnimateNavBar(props) {
 
 function Nav() {
   const [drawerOpen, toggleDrawer] = useState(false);
+  const history = useHistory();
+
   useEffect(() => {
     const wow = new WOW.WOW();
     wow.init();
@@ -86,7 +89,7 @@ function Nav() {
               <i className="fas fa-bars"></i>
             </IconButton>
           </Hidden>
-          <img alt="logo" src={icon} className="logoWrapper"/>
+          <img onClick={() => history.push("/")} alt="logo" src={icon} className="logoWrapper"/>
           <Hidden smDown>
             <Typography className="navigationWrapper">
               <Link to="/about" color="textSecondary" variant="h6">

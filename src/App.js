@@ -17,18 +17,16 @@ import './App.scss';
 function App() {
   let { location } = useParams();
   React.useEffect(() => {
-    if(location) {
-      var elmnt = document.getElementById(location);
-      elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [location]);
+    var elmnt = document.getElementById(location || 'intro');
+    elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Nav />
       <Container maxWidth="md" className="containerStyle">
-        <Intro/>
+        <Intro id="intro"/>
         <About id="about"/>
         <Experience id="experience"/>
         <Work id="work"/>
