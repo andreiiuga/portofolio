@@ -10,9 +10,13 @@ import ListItem from '@material-ui/core/ListItem';
 import Drawer from '@material-ui/core/Drawer';
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
+import {
+  Link,
+} from "react-router-dom";
 
 import icon from 'assets/img/logo.png';
+import resume from 'assets/resume.pdf';
 
 import './styles.scss';
 import WOW from 'wowjs';
@@ -45,6 +49,10 @@ function Nav() {
     const wow = new WOW.WOW();
     wow.init();
   }, []);
+
+  const openResume = () => {
+    window.open(resume, "_blank");
+  }
 
   return ([
     <Hidden smUp key="drawer">
@@ -81,19 +89,19 @@ function Nav() {
           <img alt="logo" src={icon} className="logoWrapper"/>
           <Hidden smDown>
             <Typography className="navigationWrapper">
-              <Link component="button" color="textSecondary" variant="h6">
+              <Link to="/about" color="textSecondary" variant="h6">
                 About
               </Link>
-              <Link component="button" color="textSecondary" variant="h6">
+              <Link to="/experience" color="textSecondary" variant="h6">
                 Experience
               </Link>
-              <Link component="button" color="textSecondary" variant="h6">
+              <Link to="/work" color="textSecondary" variant="h6">
                 Work
               </Link>
-              <Link component="button" color="textSecondary" variant="h6">
+              <Link to="/contact" color="textSecondary" variant="h6">
                 Contact
               </Link>
-              <Button href="#outlined-buttons">
+              <Button className="specialButton" onClick={openResume}>
                 Resume
               </Button>
             </Typography>

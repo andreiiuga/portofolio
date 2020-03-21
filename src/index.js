@@ -4,8 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-ReactDOM.render(<App />, document.getElementById('root'));
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
+ReactDOM.render(
+    <Router>
+        <Switch>
+            <Route path="/:location" children={<App />} />
+            <Route path="/" children={<App />} />
+        </Switch>
+    </Router>
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

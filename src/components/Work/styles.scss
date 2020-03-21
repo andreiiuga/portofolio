@@ -1,54 +1,69 @@
 .projectDetails {
-	margin-bottom: 70px;
+    margin: 100px -20px 150px -20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+    background: white;
+    width: unset !important;
 
-	.galeryWrapper {
-		width: 100%;
-		position: relative;
-		box-shadow: 3px 3px 5px 1px grey;
-		border-radius: 4px;
-		margin-top: 50px;
+    &.evenItem {
+        transform: rotate(2deg);
 
-		&.evenItem {
-			transform: rotate(-5deg);
-			margin-right: 10px;
+        .galeryWrapper {
+            transform: rotate(-3deg);
+            margin-right: 10px;
+        }
 
-		}
+        .detailsWrapper {
+            padding-left: 15px;
+        }
 
-		&.not-evenItem {
-			transform: rotate(5deg);
-			margin-left: 10px;
+    }
 
-			.fileClip {
-				right: 0px;
-			}
-		}
+    &.not-evenItem {
+        transform: rotate(-2deg);
 
-		.carouselItem {
-			height: 100%;
-			background: #fafafa;
-			padding: 10px;
-		}
-		.fileClip {
-			position: absolute;
-			width: 200px;
-			height: auto;
-			top: -46px;
-			z-index: 1;
-		}
-	}
+        .galeryWrapper {
+            transform: rotate(3deg);
+            margin-left: 10px;
 
-	.detailsWrapper {
+            .fileClip {
+                right: 0px;
+            }
+        }
+        .detailsWrapper {
+            padding-right: 15px;
+        }
+    }
 
-		&.evenItem {
-			padding-left: 15px;
-		}
+    .galeryWrapper {
+        width: 100%;
+        position: relative;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+        border-radius: 4px;
+        margin-top: -42px;
 
-		&.not-evenItem {
-			padding-right: 15px;
-		}
+        .carouselItem {
+            cursor: pointer;
+            height: 100%;
+            background: white;
+            padding: 15px;
+        }
+        .fileClip {
+            position: absolute;
+            width: 185px;
+            height: auto;
+            top: -60px;
+            z-index: 1;
+        }
+    }
 
-		.MuiTypography-caption {
-			color: red;
-		}
-	}
+    .detailsWrapper {
+
+    }
+
+    .MuiTypography-caption {
+        width: 100%;
+        color: red;
+    }
 }

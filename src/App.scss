@@ -1,5 +1,5 @@
 .containerStyle {
-    margin-top: 200px;
+    margin-bottom: 100px;
     width: 100%;
 
     .MuiTypography-root {
@@ -8,7 +8,7 @@
     }
 
     .sectionWrapper {
-        margin-top: 300px;
+        padding: 150px 0px;
 
         .sectionTitle {
             margin-bottom: 30px;
@@ -22,7 +22,8 @@
 }
 
 a {
-    font-weight: 600;
+    font-weight: 800;
+    font-family: "American Typewriter", serif !important;
     text-decoration: none;
     background-repeat: no-repeat;
     background-image: url("assets/img/underline.png");
@@ -31,6 +32,24 @@ a {
     color: black;
 
     &:hover {
+        color: #c52c2b;
+    };
+}
+
+.specialButton {
+    font-family: "American Typewriter", serif !important;
+    text-align: center;
+    font-weight: 600 !important;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-image: url("assets/img/button.png");
+    background-position: center;
+    background-size: 100% 100%;
+    color: black;
+
+    &:hover {
+        background-color: #00000000 !important;
+        text-decoration: none;
         color: #c52c2b;
     };
 }

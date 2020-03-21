@@ -62,7 +62,7 @@ function a11yProps(index) {
 }
 
 
-export default function Experience() {
+export default function Experience(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -70,8 +70,8 @@ export default function Experience() {
   };
 
   return (
-    <section className="sectionWrapper">
-      <Typography className="sectionTitle" variant="h5"> <span className="colorCode-red">02.</span> Where I've Worked  .  .  .</Typography>
+    <section {...props} className="sectionWrapper">
+      <Typography className="sectionTitle" variant="h4"> <span className="colorCode-red">02.</span> Where I've Worked  .  .  .</Typography>
       <div className="tabsPannelWrapper">
         <Tabs
           orientation="vertical"

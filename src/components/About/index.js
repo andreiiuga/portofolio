@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 import portrait from 'assets/img/portrait.png';
 import marker from 'assets/img/list-marker.png';
+import fileClip from 'assets/img/file-clip.png';
 
 import './styles.scss';
 
@@ -22,10 +23,10 @@ const COL2SKILLS = [
 ]
 
 
-function About() {
+function About(props) {
   return (
-    <section className="aboutWrapper sectionWrapper">
-      <Typography className="sectionTitle" variant="h5"> <span className="colorCode-red">01.</span> About me  .  .  .</Typography>
+    <section {...props} className="aboutWrapper sectionWrapper">
+      <Typography className="sectionTitle" variant="h4"> <span className="colorCode-red">01.</span> About me  .  .  .</Typography>
       <Grid container>
         <Grid item xs={12} sm={12} md={7}>
           <Typography variant="subtitle1" paragraph>
@@ -70,7 +71,10 @@ function About() {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
-          <img className="portraitStyle" src={portrait} alt="portrait" />
+          <div className="portraitWrapper">
+            <img src={fileClip} alt="fileClip" className="fileClip"/>
+            <img className="portraitStyle" src={portrait} alt="portrait" />
+          </div>
         </Grid>
       </Grid>
     </section>

@@ -9,9 +9,9 @@ import './styles.scss';
 
 
 
-function Intro() {
+function Intro(props) {
   return (
-    <section className="introWrapper">
+    <section {...props} className="sectionWrapper introWrapper">
       <Typography variant="h6"> Hi, my name is</Typography>
       <div className="picturesContainer">
         <img alt="Andrei" src={surname} className="nameClasses"/>
