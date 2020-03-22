@@ -23,6 +23,16 @@
 		cursor: pointer;
 	}
 	.navigationWrapper {
+		padding: 10px 50px;
+		display: block;
+
+		.linkButton {
+			padding: 0px !important;
+			position: relative;
+			display: inline-block;
+			line-height: 1.15;
+		}
+
 		& > * + * {
 	      margin-left: 24px;
 	    }

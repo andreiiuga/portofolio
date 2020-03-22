@@ -25,7 +25,7 @@ const COL2SKILLS = [
 
 function About(props) {
   return (
-    <section {...props} className="aboutWrapper sectionWrapper">
+    <section {...props} className="aboutWrapper sectionWrapper wow fadeInUp" data-wow-offset="200" data-wow-duration="0.5s" data-wow-delay="0.2s">
       <Typography className="sectionTitle" variant="h4"> <span className="colorCode-red">01.</span> About me  .  .  .</Typography>
       <Grid container>
         <Grid item xs={12} sm={12} md={7}>
@@ -54,16 +54,16 @@ function About(props) {
           <Grid container>
             <Grid item xs={12} sm={12} md={6}>
               {COL1SKILLS.map(skill => 
-                <div className="lsitItem">
-                  <img src={marker} className="listMarker" />
+                <div className="lsitItem" key={skill}>
+                  <img alt=">"  src={marker} className="listMarker" />
                   <Typography variant="body2">{skill}</Typography>
                 </div>
               )}
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
               {COL2SKILLS.map(skill => 
-                <div className="lsitItem">
-                  <img src={marker} className="listMarker" />
+                <div className="lsitItem" key={skill}>
+                  <img alt=">" src={marker} className="listMarker" />
                   <Typography variant="body2">{skill}</Typography>
                 </div>
               )}
@@ -72,7 +72,7 @@ function About(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
           <div className="portraitWrapper">
-            <img src={fileClip} alt="fileClip" className="fileClip"/>
+            <img alt="^" src={fileClip} className="fileClip"/>
             <img className="portraitStyle" src={portrait} alt="portrait" />
           </div>
         </Grid>

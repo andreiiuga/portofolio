@@ -7,9 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useParams
+  Route
 } from "react-router-dom";
 ReactDOM.render(
     <Router>

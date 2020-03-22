@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,10 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-// import Link from '@material-ui/core/Link';
 import {
   Link,
   useHistory
@@ -20,7 +20,6 @@ import icon from 'assets/img/logo.png';
 import resume from 'assets/resume.pdf';
 
 import './styles.scss';
-import WOW from 'wowjs';
 
 function AnimateNavBar(props) {
   const { children } = props;
@@ -48,63 +47,68 @@ function Nav() {
   const [drawerOpen, toggleDrawer] = useState(false);
   const history = useHistory();
 
-  useEffect(() => {
-    const wow = new WOW.WOW();
-    wow.init();
-  }, []);
-
   const openResume = () => {
     window.open(resume, "_blank");
   }
 
   return ([
-    <Hidden smUp key="drawer">
-      <Drawer open={drawerOpen} onClose={() => toggleDrawer(false)}>
-        <Typography className="navigationWrapper">
+    <Hidden mdUp key="drawer">
+      <Drawer open={drawerOpen} onClose={() => toggleDrawer(false)} anchor={"right"}>
+        <Typography className="navigationWrapper" variant="h4">
           <List>
-            <ListItem button key={'Link1'}>
-              <Link component="button" variant="body2">
-                Link
+            <ListItem>
+              <Link onClick={() => toggleDrawer(false)} className="linkButton" to="/about">
+                About
               </Link>
             </ListItem>
-            <ListItem button key={'Link2'}>
-              <Link component="button" variant="body2">
-                Link
+            <ListItem>
+              <Link onClick={() => toggleDrawer(false)} className="linkButton" to="/experience">
+                Experience
               </Link>
             </ListItem>
-            <ListItem button key={'Link3'}>
-              <Link component="button" variant="body2">
-                Link
+            <ListItem>
+              <Link onClick={() => toggleDrawer(false)} className="linkButton" to="/work">
+                Work
               </Link>
+            </ListItem>
+            <ListItem>
+              <Link onClick={() => toggleDrawer(false)} className="linkButton" to="/contact">
+                Contact
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Button  className="specialButton" onClick={openResume}>
+                Resume
+              </Button>
             </ListItem>
           </List>
         </Typography>
       </Drawer>
     </Hidden>,
-    <AnimateNavBar>
+    <AnimateNavBar key="navbar">
       <AppBar position="fixed" key="bar">
         <Toolbar className="centerContentInsideToolbar">
-          <Hidden smUp>
+          <img onClick={() => history.push("/")} alt="logo" src={icon} className="logoWrapper"/>
+          <Hidden mdUp>
             <IconButton onClick={() => toggleDrawer(true)} className="menuButtonIcon" edge="start" aria-label="menu">
               <i className="fas fa-bars"></i>
             </IconButton>
           </Hidden>
-          <img onClick={() => history.push("/")} alt="logo" src={icon} className="logoWrapper"/>
           <Hidden smDown>
             <Typography className="navigationWrapper">
-              <Link to="/about" color="textSecondary" variant="h6">
+              <Link className="linkButton" to="/about">
                 About
               </Link>
-              <Link to="/experience" color="textSecondary" variant="h6">
+              <Link className="linkButton" to="/experience">
                 Experience
               </Link>
-              <Link to="/work" color="textSecondary" variant="h6">
+              <Link className="linkButton" to="/work">
                 Work
               </Link>
-              <Link to="/contact" color="textSecondary" variant="h6">
+              <Link className="linkButton" to="/contact">
                 Contact
               </Link>
-              <Button className="specialButton" onClick={openResume}>
+              <Button  className="specialButton" onClick={openResume}>
                 Resume
               </Button>
             </Typography>

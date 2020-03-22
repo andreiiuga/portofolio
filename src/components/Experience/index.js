@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 import marker from 'assets/img/list-marker.png';
 
@@ -31,10 +31,10 @@ function TabPanel(props) {
       <Typography>{period}</Typography>
       <List>
       {
-        responsabilities.map(responsability => 
-          <ListItem>
+        responsabilities.map((responsability, idx) => 
+          <ListItem key={idx}>
             <ListItemIcon>
-              <img src={marker} className="listMarker" />
+              <img alt=">" src={marker} className="listMarker" />
             </ListItemIcon>
             <ListItemText><Typography variant="body2">{responsability}</Typography></ListItemText>
           </ListItem>,
@@ -64,17 +64,19 @@ function a11yProps(index) {
 
 export default function Experience(props) {
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  const onMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <section {...props} className="sectionWrapper">
+    <section {...props} className="sectionWrapper wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
       <Typography className="sectionTitle" variant="h4"> <span className="colorCode-red">02.</span> Where I've Worked  .  .  .</Typography>
-      <div className="tabsPannelWrapper">
+      <div className={`tabsPannelWrapper ${onMobile ? 'OnMobile': ''}`}>
         <Tabs
-          orientation="vertical"
+          orientation={onMobile ? "orizontal" : "vertical"}
           variant="scrollable"
           value={value}
           onChange={handleChange}

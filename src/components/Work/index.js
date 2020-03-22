@@ -1,19 +1,15 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Carousel } from 'react-responsive-carousel';
 
 import fileClip from 'assets/img/file-clip.png';
-import andrei from 'assets/img/andrei.png';
-import iuga from 'assets/img/iuga.png';
 import proj2files from 'assets/img/proj2';
 import proj3files from 'assets/img/proj3';
 import proj4files from 'assets/img/proj4';
 
 import './styles.scss';
-
 
 
 import Dialog from '@material-ui/core/Dialog';
@@ -31,12 +27,10 @@ const projects = [
     title: "e-PrimariaTa.ro",
     link: "https://e-primariata.ro/",
     description: 
-    ["E-primariaTa.ro is an application created specifically to meet the needs of city halls \
-      from Romania and the citizens they serve.",
-    "Our product includes both \
-      functionalities that make efficient the activity of the city halls officials, as well as \
-      new channels and simplified procedures for interaction between citizens and mayors. \
-    "],
+    [
+      "E-primariaTa.ro is an application created specifically to meet the needs of city halls from Romania and the citizens they serve.",
+      "Our product includes both functionalities that make efficient the activity of the city halls officials, as well as new channels and simplified procedures for interaction between citizens and mayors."
+    ],
     technologies: "Javascrip(ES6) | ReactJs | Redux | Material-Ui |SASS | REST"
   },
   {
@@ -44,15 +38,11 @@ const projects = [
     title: "Beagle.ai",
     link: "https://www.linkedin.com/company/beagle-inc-/about/",
     description:
-    ["Beagle has been architected as an artificial intelligence (AI) platform \
-      for semantics that helps decision-makers understand what they are reading and how it \
-      relates to their company.",
-    "Beagle is trained by the users to know the critical compliance \
-      elements they are looking for. It then provides the guidance and the information to the \
-      decision maker to ensure they are following the rules.",
-    "This leads to better corporate \
-      compliance, reduced risk and higher quality employee engagement.\
-    "],
+    [
+      "Beagle has been architected as an artificial intelligence (AI) platform for semantics that helps decision-makers understand what they are reading and how it relates to their company.",
+      "Beagle is trained by the users to know the critical compliance elements they are looking for. It then provides the guidance and the information to the decision maker to ensure they are following the rules.",
+      "This leads to better corporate compliance, reduced risk and higher quality employee engagement."
+    ],
     technologies: "Javascrip(ES6) | ReactJs | Redux | Bootstrap | SASS | REST"
   },
   {
@@ -60,11 +50,10 @@ const projects = [
     title: "BeOnTime",
     link: "https://www.innovationlabs.ro/teams/BeOnTime",
     description:
-    ["\
-      BeOnTime is a solution that offers real time routing suggestions for public transport, \
-      relevant analytics data, smart targeted marketing.",
-    "Therefore, it improves waiting time, passenger flow and overall quality of public transport.\
-    "],
+    [
+      "BeOnTime is a solution that offers real time routing suggestions for public transport, relevant analytics data, smart targeted marketing.",
+      "Therefore, it improves waiting time, passenger flow and overall quality of public transport."
+    ],
     technologies: "Javascrip(ES6) | ReactJs | Redux | Python | Flusk | REST"
   }
 ];
@@ -99,7 +88,7 @@ function ResponsiveDialog({handleClose ,projectIdx}) {
 function Item({ image, onImageClick }) {
   return (
     <div className="carouselItem" onClick={onImageClick}>
-      <img src={image} />
+      <img alt="project screenshot" src={image} />
     </div>
   )
 }
@@ -107,7 +96,7 @@ function Item({ image, onImageClick }) {
 function Galery({ images, ...other }) {
   return (
     <Carousel showThumbs={false} infiniteLoop className="carouselWrapper">
-      {(images || []).map(image => <Item {...other} image={image} />)}
+      {(images || []).map((image, idx) => <Item key ={idx} {...other} image={image} />)}
     </Carousel>
   );
 }
@@ -130,8 +119,8 @@ function ProjectIntro(props) {
       <div className="detailsWrapper">
         <Typography align={alignament} paragraph variant="h5"><b><a href={link}>{title}</a></b></Typography>
         {
-          description.map(paragraph => 
-            <Typography align={alignament} paragraph variant="subtitle1">{paragraph}</Typography>
+          description.map((paragraph, idx) => 
+            <Typography key={idx} align={alignament} paragraph variant="subtitle1">{paragraph}</Typography>
           )
         }
       </div>
@@ -140,10 +129,12 @@ function ProjectIntro(props) {
 
   const content = [galery,details];
   return (
-    <Grid container className={`projectDetails ${evenClass}`}>
-      {isEven ? content : content.reverse()}
-      <Typography align={alignament} paragraph variant="caption">{technologies}</Typography>
-    </Grid>
+    <div className="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
+      <Grid container className={`projectDetails ${evenClass}`} data-wow-duration="0.5s" data-wow-delay="0.2s">
+        {isEven ? content : content.reverse()}
+        <Typography align={alignament} paragraph variant="caption">{technologies}</Typography>
+      </Grid>
+    </div>
   );
 }
 
@@ -158,10 +149,9 @@ function Work(props) {
     <section {...props} className="sectionWrapper">
       <Typography className="sectionTitle" variant="h5"> <span className="colorCode-red">03.</span> Some things I've built  .  .  .</Typography>
       {
-        projects.map((project, idx) => <ProjectIntro onImageClick={() => {
-          console.log(idx);
-          toggleOpenedProjectGalery(idx)
-        }} isEven={!(idx%2)} {...project}/>)
+        projects.map((project, idx) =>
+          <ProjectIntro key={idx} onImageClick={() => toggleOpenedProjectGalery(idx)} isEven={!(idx%2)} {...project}/>
+        )
       }
       <ResponsiveDialog handleClose={handleClose} projectIdx={openedProjectGalery} />
     </section>

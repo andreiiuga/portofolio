@@ -2,6 +2,14 @@
 	display: flex;
 	min-height: 400px;
 
+	&.OnMobile { 
+		flex-direction: column;
+
+		&.tabsWrapper {
+			margin-bottom: 20px;
+		}
+	}
+
 	.tabsWrapper {
 		min-width: 180px;
 	}
