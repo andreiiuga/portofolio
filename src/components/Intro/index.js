@@ -2,8 +2,8 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import name from "assets/img/iuga2.png";
-import surname from "assets/img/andrei.png";
+import name from "assets/img/iuga_optimized.png";
+import surname from "assets/img/andrei_optimized.png";
 
 import './styles.scss';
 
