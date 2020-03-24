@@ -9007,6 +9007,11 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
+react-load-image@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-load-image/-/react-load-image-0.1.7.tgz#508243c8a80f0af2007ac9099430230e6ba4a2d4"
+  integrity sha512-egW6vKvS/mG0onDx1t4XG6L2rgvZa/iO16ia+fomJN0UXjnwvvq/on7ttPR8ctohD7DGK7laXGSku00ifUJeig==
+
 react-material-ui-carousel@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-material-ui-carousel/-/react-material-ui-carousel-1.1.1.tgz#2e0d460808e8846737be401aab00b34d93333efa"

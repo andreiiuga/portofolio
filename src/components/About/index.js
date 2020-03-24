@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import ImageLoader from 'react-load-image';
 
 import portrait from 'assets/img/portrait.png';
 import marker from 'assets/img/list-marker.png';
@@ -73,7 +74,11 @@ function About(props) {
         <Grid item xs={12} sm={12} md={5}>
           <div className="portraitWrapper">
             <img alt="^" src={fileClip} className="fileClip"/>
-            <img className="portraitStyle" src={portrait} alt="portrait" />
+            <ImageLoader src={portrait}>
+              <img className="portraitStyle" loading="lazy"  alt="portrait"/>
+              <div>Error!</div>
+              <img className="portraitStyle" alt="loading..." src="https://thumbs.gfycat.com/SizzlingSmallAbalone-size_restricted.gif"/>
+            </ImageLoader>
           </div>
         </Grid>
       </Grid>

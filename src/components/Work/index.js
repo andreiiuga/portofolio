@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Carousel } from 'react-responsive-carousel';
+import ImageLoader from 'react-load-image';
 
 import fileClip from 'assets/img/file-clip.png';
 import proj2files from 'assets/img/proj2';
@@ -88,7 +89,11 @@ function ResponsiveDialog({handleClose ,projectIdx}) {
 function Item({ image, onImageClick }) {
   return (
     <div className="carouselItem" onClick={onImageClick}>
-      <img alt="project screenshot" src={image} />
+      <ImageLoader src={image}>
+        <img loading="lazy" alt="project screenshot"/>
+        <div>Error!</div>
+        <img alt="loading..." src="https://thumbs.gfycat.com/SizzlingSmallAbalone-size_restricted.gif"/>
+      </ImageLoader>
     </div>
   )
 }

@@ -2,6 +2,10 @@
     position: relative;
     width: 100%;
 
+    &.hideContent {
+        display: none;
+    }
+
     .MuiTypography-root {
         font-family: "American Typewriter", serif;
         font-weight: 500;

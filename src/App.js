@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LoadingIntro from './components/LoadingIntro';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -19,26 +20,26 @@ import './App.scss';
 
 function App() {
   let { location } = useParams();
+  const [doneLoading, setDoneLoading] = React.useState(false);
 
   React.useEffect(() => {
-  var elmnt = document.getElementById(location || 'intro');
-    elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var elmnt = document.getElementById(location || 'intro');
+    elmnt && elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   React.useEffect(() => {
-  console.log(location);
-  var elmnt = document.getElementById(location || 'intro');
-  console.log(elmnt);
-
-    elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var elmnt = document.getElementById(location || 'intro');
+    elmnt && elmnt.scrollIntoView({ behavior: 'smooth', block: 'start' });
     new WOW.WOW().init();
+    setTimeout(() => setDoneLoading(true), 4800);
   }, []);
 
   return (
     <React.Fragment>
+      <LoadingIntro className={doneLoading ? "doneLoading" : ""}/>
       <CssBaseline />
       <Nav />
-      <Container maxWidth="md" className="containerStyle">
+      <Container maxWidth="md" className={`containerStyle ${doneLoading ? "" : "hideContent"}`}>
         <Intro id="intro"/>
         <About id="about"/>
         <Experience id="experience"/>

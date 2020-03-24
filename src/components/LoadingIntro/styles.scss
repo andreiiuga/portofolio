@@ -1,0 +1,21 @@
+.loaderWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 1000000;
+
+    &.doneLoading {
+        display: none;
+    }
+
+    .myAnimations {
+        height: 150px;
+        width: auto;
+        animation: bounceInLeft 2s, hinge 2s linear 3s;
+        -webkit-animation: bounceInLeft 2s, hinge 2s linear 3s;
+    }
+}
